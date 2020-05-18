@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PetProject</string>
+    <string name="yes">Да</string>
+
+    <string name="main_screen">Главный экран</string>
+    <string name="items_screen">Список</string>
+
+    <string name="detail_screen">Детали</string>
+</resources>
