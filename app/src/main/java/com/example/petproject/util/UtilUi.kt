@@ -35,7 +35,7 @@ class UtilUi {
             msg: String?,
             duration: Int,
             @StringRes action: Int,
-            runnable: Runnable?
+            runnable: (() -> Unit)?
         ) {
             if (rootView == null) return
             val snackbar: Snackbar = Snackbar.make(
@@ -60,8 +60,8 @@ class UtilUi {
 
             if (runnable != null) {
                 snackbar.setAction(
-                    action,
-                    { v -> runnable.run() })
+                    action
+                ) { _ -> runnable()}
                 val tvAction: TextView = snackView.findViewById(
                     com.google.android.material.R.id.snackbar_action
                 )

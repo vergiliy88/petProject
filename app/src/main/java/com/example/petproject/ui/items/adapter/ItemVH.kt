@@ -1,0 +1,24 @@
+package com.example.petproject.ui.items.adapter
+
+import android.view.View
+import android.widget.TextView
+import com.example.petproject.R
+import com.example.petproject.model.TestObject
+import com.example.petproject.ui.base.BaseViewHolder
+
+class ItemVH(itemView: View, viewIds: Set<Int?>) : BaseViewHolder<TestObject>(itemView, viewIds) {
+
+    private lateinit var label: TextView
+    private lateinit var value: TextView
+
+    override fun onBindView(itemView: View) {
+        label = itemView.findViewById(R.id.tvLabel)
+        value = itemView.findViewById(R.id.tvValue)
+    }
+
+    override fun onBindData(item: TestObject) {
+        super.onBindData(item)
+        label.text = item.label
+        value.text = item.value
+    }
+}

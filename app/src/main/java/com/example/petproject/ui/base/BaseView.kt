@@ -10,13 +10,13 @@ interface BaseView {
     fun showMessage(
         msg: String?,
         @StringRes actionName: Int,
-        runnable: Runnable?
+        runnable: Unit?
     )
 
     fun showMessage(
         @StringRes resId: Int,
         @StringRes actionName: Int,
-        runnable: Runnable?
+        runnable: Unit?
     )
 
     fun hideKeyboard()

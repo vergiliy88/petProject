@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="snack_text_size">12sp</dimen>
+
+    <dimen name="small_text">10sp</dimen>
+    <dimen name="medium_text">14sp</dimen>
+    <dimen name="big_text">18sp</dimen>
+
+    <dimen name="small_space">4dp</dimen>
+    <dimen name="medium_space">8dp</dimen>
+    <dimen name="big_space">16dp</dimen>
 </resources>

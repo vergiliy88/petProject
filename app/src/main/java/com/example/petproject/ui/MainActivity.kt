@@ -1,7 +1,6 @@
 package com.example.petproject.ui
 
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
 import com.example.petproject.R
 import com.example.petproject.ui.base.BaseActivity

@@ -31,16 +31,16 @@ open class BaseActivity: AppCompatActivity(), BaseView {
 
     override fun showMessage(msg: String?,
                              actionName: Int,
-                             runnable: Runnable?) {
+                             runnable: Unit?) {
         UtilUi.snack (
             findViewById (android.R.id.content),
             msg,
             Snackbar.LENGTH_LONG,
             actionName,
-            runnable);
+            { runnable });
     }
 
-    override fun showMessage(resId: Int, actionName: Int, runnable: Runnable?) {
+    override fun showMessage(resId: Int, actionName: Int, runnable: Unit?) {
         val msg = getString(resId)
         showMessage(msg, actionName, runnable)
     }

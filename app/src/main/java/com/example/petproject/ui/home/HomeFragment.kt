@@ -19,6 +19,12 @@ import com.google.android.material.snackbar.Snackbar
 class HomeFragment(): BaseFragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private var model: HomeViewModel? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        model = ViewModelProvider(this).get(HomeViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,17 +39,13 @@ class HomeFragment(): BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnDetail.setOnClickListener {
             model?.updateText("42344")
-            UtilUi.snack(activity!!.findViewById(android.R.id.content) , "Show Toast", Snackbar.LENGTH_LONG, R.string.yes, Toast.makeText(context, "555555", Toast.LENGTH_LONG).show())
+            UtilUi.snack(activity!!.findViewById(android.R.id.content) , "Show Toast", Snackbar.LENGTH_LONG, R.string.yes){
+                Toast.makeText(context!!, "Show Toast", Toast.LENGTH_SHORT).show()
+            }
         }
         model?.text?.observe(viewLifecycleOwner, Observer<String> { item ->
             binding.textView.text = item
         })
-    }
-
-    private var model: HomeViewModel? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        model = ViewModelProvider(this).get(HomeViewModel::class.java)
     }
 
     override fun onDestroyView() {
