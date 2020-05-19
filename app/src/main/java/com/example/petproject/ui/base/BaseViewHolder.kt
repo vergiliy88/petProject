@@ -11,8 +11,8 @@ abstract class BaseViewHolder<I: BaseItem>(itemView: View, viewIds: Set<Int?>) :
 
     private var clickedViews: SparseArray<View>? = null
 
-    open fun onBindView(itemView: View) {}
-    open fun onBindData(item: I) {}
+    open fun bindView(itemView: View) {}
+    open fun bindData(item: I) {}
 
     init {
         clickedViews = SparseArray(viewIds.size)

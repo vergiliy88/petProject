@@ -26,13 +26,13 @@ abstract class BaseAdapter<T: BaseItem, H: BaseViewHolder<T>>: RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: H, position: Int) {
-        holder.onBindData(items[position])
+        holder.bindData(items[position])
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): H {
         val view = LayoutInflater.from(parent.context).inflate(layoutId, parent, false)
         val holder = newInstanceHolder(view, this.listeners.keys)
-        holder.onBindView(view)
+        holder.bindView(view)
         holder.bindListeners (this.listeners);
         return holder
     }

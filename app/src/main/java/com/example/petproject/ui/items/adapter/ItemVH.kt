@@ -11,13 +11,13 @@ class ItemVH(itemView: View, viewIds: Set<Int?>) : BaseViewHolder<TestObject>(it
     private lateinit var label: TextView
     private lateinit var value: TextView
 
-    override fun onBindView(itemView: View) {
+    override fun bindView(itemView: View) {
         label = itemView.findViewById(R.id.tvLabel)
         value = itemView.findViewById(R.id.tvValue)
     }
 
-    override fun onBindData(item: TestObject) {
-        super.onBindData(item)
+    override fun bindData(item: TestObject) {
+        super.bindData(item)
         label.text = item.label
         value.text = item.value
     }
